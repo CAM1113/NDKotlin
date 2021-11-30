@@ -1,20 +1,10 @@
-package com.cam.ndkotlin
-
-import java.lang.annotation.Native
+package com.cam.image_process
 
 class ImageParser {
     var name = "CAM"
-
-
     external fun parseImage(): String
 
-
-
-
     companion object {
-
-        external fun staticFun():String
-
         init {
             System.loadLibrary("image_process")
         }

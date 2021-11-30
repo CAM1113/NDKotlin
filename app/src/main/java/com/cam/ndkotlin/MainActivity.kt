@@ -2,19 +2,17 @@ package com.cam.ndkotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.cam.commons.logE
-import com.cam.ndkotlin.security.SecurityUtils
-import com.cam.ndkotlin.security.Temps
+import com.cam.image_process.ImageParser
+import com.cam.image_process.ImageProcess
 import kotlinx.android.synthetic.main.activity_main.*
-import java.nio.charset.Charset
-import java.security.MessageDigest
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val imageProcess = ImageProcess()
+        logE(imageProcess.add(1,2))
         tv.text = ImageParser().parseImage()
 
         logE("CAM")

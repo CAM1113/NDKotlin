@@ -1,9 +1,9 @@
 
 #替换，相当于宏定义
-set(PROJECT_NAME_CAM image_process)
+set(MY_PROJECT_NAME_CAM security)
 # Declares and names the project.
 #项目名称，非必选
-project(${PROJECT_NAME_CAM})
+project(${MY_PROJECT_NAME_CAM})
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -12,15 +12,14 @@ project(${PROJECT_NAME_CAM})
 
 add_library( # Sets the name of the library.
 #        库的名称
-        ${PROJECT_NAME_CAM}
+        ${MY_PROJECT_NAME_CAM}
 
         # 将库设置为.so动态连接库
         SHARED
 
         # Provides a relative path to your source file(s).
         # 添加动态库里包含的所有cpp文件，包括引用的lib里的cpp
-        ImageProcess.cpp
-        ../commons/Commons.cpp
+        Security.cpp
         )
 
 # Searches for a specified prebuilt library and stores the path as a
@@ -43,7 +42,7 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-        ${PROJECT_NAME_CAM}
+        ${MY_PROJECT_NAME_CAM}
 
         # Links the target library to the log library
         # included in the NDK.

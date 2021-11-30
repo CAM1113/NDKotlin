@@ -9,7 +9,7 @@ using namespace std;
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_cam_ndkotlin_security_SecurityUtils_MD5(JNIEnv *env, jobject thiz, jstring input) {
+Java_com_cam_security_SecurityUtils_MD5(JNIEnv *env, jobject thiz, jstring input) {
     //调用java层的MD5加密方法
     //MessageDigest.getInstance("MD5").digest("CAM".toByteArray())
 
@@ -28,8 +28,8 @@ Java_com_cam_ndkotlin_security_SecurityUtils_MD5(JNIEnv *env, jobject thiz, jstr
 }
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_cam_ndkotlin_security_SecurityUtils_00024Companion_getUUID(JNIEnv *env, jobject thiz) {
-    // TODO: implement getUUID()
+Java_com_cam_security_SecurityUtils_00024Companion_getUUID(JNIEnv *env, jobject thiz) {
+
 //    return UUID.randomUUID().toString()
     jclass clazz = env->FindClass("java/util/UUID");
 
@@ -37,5 +37,5 @@ Java_com_cam_ndkotlin_security_SecurityUtils_00024Companion_getUUID(JNIEnv *env,
     jobject uuid = env->CallStaticObjectMethod(clazz, methodId);
 
     methodId = env->GetMethodID(env->GetObjectClass(uuid), "toString", "()Ljava/lang/String;");
-    return (jstring)env->CallObjectMethod(uuid, methodId);
+    return (jstring) env->CallObjectMethod(uuid, methodId);
 }
